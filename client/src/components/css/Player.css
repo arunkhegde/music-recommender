@@ -8,11 +8,11 @@
     background-color: #fff;
     border-radius: 15px;
     box-shadow:0 10px 20px 10px rgba(7, 7, 7, 0.6) ;
-    display: flex;
-    padding:20px 50px;
+    display: flex; /* image navigation and audio*/
+    justify-content: space-evenly;
+    padding:20px 30px;
     position: relative;
     margin: 100px 0;
-    width:400px;
     z-index: 1;
 }
 
@@ -38,7 +38,6 @@
     position: absolute;
     bottom:0;
     left:0;
-
     animation:rotate 6s linear infinite;
     animation-play-state:paused;
 }
@@ -61,16 +60,18 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
+    flex-basis: 60%;
   }
   
   .action-btn {
     background-color: #fff;
-    border: 0;
+    border: black solid;
     color: #837c83;
     font-size: 20px;
     cursor: pointer;
-    padding: 10px;
-    margin: 0 20px;
+     padding: 10px; 
+    /* margin: 0 20px; */
+    flex-basis: 40%;
   }
   
   .action-btn.action-btn-big {
@@ -89,7 +90,7 @@
     position:absolute;
     top:0;
     left:20px;
-    width: calc(100% - 40px);
+    width: calc(60% - 40px);
     opacity: 0;
     transform:translateY(0%);
     transition:transform 0.3s ease-in,opacity 0.3s;
@@ -124,10 +125,12 @@
 
 
 .volume{
-    height:100%;
+    height:50px;
     display: flex;
-    padding: 0px;
+    padding: 2px;
     align-items: center;
+    border:solid black;
+    flex-basis: 70px;
 }
 
 .volume-sider-content{

@@ -6,12 +6,12 @@ export const Player = () => {
         <div className="Pmain">
    
     <div class="music-container play" id="music-container">
-      {/* <div class="music-info">
-        <h4 id="title"></h4>
+      <div class="music-info">
+        <h4 id="title">ukelele</h4>
         <div class="progress-container" id="progress-container">
           <div class="progress" id="progress"></div>
         </div>
-      </div> */}
+      </div>
 
       <audio src="music/ukulele.mp3" id="audio"></audio>
 
@@ -22,7 +22,7 @@ export const Player = () => {
       {/* navigation */}
       <div class="navigation">
         
-        <button id="prev" class="action-btn">
+        <button id="prev" class="action-btn" >
           <i class="fas fa-backward"></i>
         </button>
         
