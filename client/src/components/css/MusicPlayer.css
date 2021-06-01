@@ -1,0 +1,40 @@
+*{
+    font-family: serif;
+    padding:0;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.head{
+    background-color:#071e31;
+    color: #1e8ce6;
+    flex-basis:10%;
+    display: flex;
+    align-items: center;
+    border-bottom: solid #0a2c47 ;
+}
+.flogout{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;/*so that text sits at center*/
+    height: 100%;
+    width: 100%;
+}
+.flogout:hover{
+    background-color: #051624;
+    box-shadow: 0 0 30px #1e8ce6,0 0 40px #093050,0 0 40px #051624,0 0 80px #051624 ;
+    cursor:pointer;
+}
+
+.body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color:#051929;
+
+}
+

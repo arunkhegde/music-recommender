@@ -1,0 +1,13 @@
+.PSmain{
+    flex-basis: 50%;
+    border-right:#0a2c47 solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.search{
+    flex-basis: 20%;
+    border-bottom: blanchedalmond solid;
+
+}
