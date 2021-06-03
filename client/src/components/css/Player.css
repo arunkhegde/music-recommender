@@ -156,6 +156,7 @@
     height: inherit;
     background-color: rgb(49, 47, 47);
     position: absolute;
+    width: 50%;
 
     /* background-color: black; */
 

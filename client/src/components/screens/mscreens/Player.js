@@ -9,10 +9,11 @@ export const Player = () => {
     const [isPlaying, setisPlaying] = useState(false)
     const [playingsong, setplayingsong] = useState('')
     const [percentage, setpercentage] = useState(0)
-    const [volPercentage, setvolPercentage] = useState(0)
+    const [volPercentage, setvolPercentage] = useState(50)
     const [duration,setduration]=useState(0)
 
     const audioRef = useRef()
+
     const volContainerRef=useRef()
     //plays and pauses video based on isPlaying,plays song whenevr its changed
     useEffect(() => {
@@ -46,9 +47,12 @@ export const Player = () => {
     }
 
     //on initial render pick first song
-    useEffect(() => {
+    const init=()=>{
       setplayingsong(songUrls[0])
-    },)
+      audioRef.current.volume=0.5     
+
+    }
+    useEffect(init,[])
 
 
 
