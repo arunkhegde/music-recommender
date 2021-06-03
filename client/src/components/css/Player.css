@@ -65,12 +65,12 @@
   
   .action-btn {
     background-color: #fff;
-    border: black solid;
     color: #837c83;
     font-size: 20px;
     cursor: pointer;
+    border: 0;
      padding: 10px; 
-    /* margin: 0 20px; */
+     margin: 0 20px; 
     flex-basis: 40%;
   }
   
@@ -98,7 +98,7 @@
 }
 
 .music-info h4{
-    margin: 0;
+    margin: 0 0;
 }
 .music-container.play .music-info{
     opacity:1;
@@ -128,9 +128,10 @@
     height:50px;
     display: flex;
     padding: 2px;
+    margin-top: 0;
     align-items: center;
-    border:solid black;
     flex-basis: 70px;
+    border: solid black;
 }
 
 .volume-sider-content{
@@ -148,6 +149,7 @@
     margin-left: 3px;
     bottom: -2px;
     cursor: pointer;
+    display: none;
 
 }
 
