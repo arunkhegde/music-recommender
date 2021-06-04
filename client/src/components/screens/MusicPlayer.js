@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState ,useEffect} from 'react'
 import '../css/MusicPlayer.css'
-import { PlayerSide } from './mscreens/PlayerSide'
-import { Recommendation } from './mscreens/Recommendation'
+import { Player } from './mscreens/Player'
+import {RecommendationSide} from './mscreens/RecommendationSide'
+
+import s1 from './mscreens/music/hey.mp3'
+import s2 from './mscreens/music/ukulele.mp3'
+import s3 from './mscreens/music/summer.mp3'
+import { SearchBar } from './mscreens/SearchBar'
+
 export const MusicPlayer = () => {
+    const [songUrls, setsongUrls] = useState([s1,s2,s3])
+    const [playingsong, setplayingsong] = useState('') //currently playing song
+    
+    const init=()=>{
+        setplayingsong(songUrls[0])
+    }
+    useEffect(init,[songUrls])
+    
     return (
         <div className="main">
             <div className="head">
@@ -19,8 +33,11 @@ export const MusicPlayer = () => {
             </div>
 
             <div className="body">
-                <PlayerSide/>
-                <Recommendation/>
+                <div className="PSmain"> {/*Left Side */}
+                        <SearchBar/>
+                <Player songUrls={songUrls} setsongUrls={setsongUrls} playingsong={playingsong} setplayingsong={setplayingsong}/>
+                </div> 
+                <RecommendationSide songUrls={songUrls} setsongUrls={setsongUrls} />        
             </div>
         </div>
     )

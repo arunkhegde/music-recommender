@@ -5,14 +5,14 @@
 }
 
 .music-container{
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 15px;
-    box-shadow:0 10px 20px 10px rgba(7, 7, 7, 0.6) ;
+    /* box-shadow:0 10px 20px 10px rgba(7, 7, 7, 0.6) ; */
     display: flex; /* image navigation and audio*/
     justify-content: space-evenly;
     padding:20px 30px;
     position: relative;
-    margin: 100px 0;
+    margin: 70px 0;
     z-index: 1;
 }
 
@@ -64,8 +64,9 @@
   }
   
   .action-btn {
-    background-color: #fff;
-    color: #837c83;
+    background-color:#051929; 
+    color:#1e8ce6;
+    opacity: 0.5;    
     font-size: 20px;
     cursor: pointer;
     border: 0;
@@ -75,7 +76,8 @@
   }
   
   .action-btn.action-btn-big {
-    color: #837c83;
+    color:#1e8ce6;
+    opacity: 0.5;
     font-size: 30px;
   }
   
@@ -83,14 +85,18 @@
     outline: 0;
   }
 
+  .action-btn:hover{
+      opacity: 1;
+  }
+
   
 .music-info{
-    background-color: rgba(255,255,255,0.5);
+    background-color: #041c2e;
     border-radius: 15px 15px 0 0;
     position:absolute;
     top:0;
-    left:20px;
-    width: calc(60% - 40px);
+    left:40px;
+    width: calc(70% - 60px);
     opacity: 0;
     transform:translateY(0%);
     transition:transform 0.3s ease-in,opacity 0.3s;
@@ -106,7 +112,7 @@
 }
 
 .progress-container{
-    background: rgb(255, 255, 255);
+    background: #0e3657;
     border-radius: 5px;
     cursor:pointer;
     margin: 10px 0;
@@ -116,7 +122,7 @@
 }
 
 .progress{
-    background-color:#fe8daa ;
+    background-color:#3e9be7 ;
     border-radius:5px;
     height:100%;
     width:0%;
@@ -143,7 +149,7 @@
     width: 60px;
     height: 4px;
     position: absolute;
-    background-color: rgb(129, 126, 126);
+    background-color: #0e3657;
     border-radius: 2px;
     margin-left: 3px;
     bottom: -2px;
@@ -154,10 +160,15 @@
 
 .volume-slider{
     height: inherit;
-    background-color: rgb(49, 47, 47);
+    background-color: #3e9be7;
     position: absolute;
-    width: 50%;
 
     /* background-color: black; */
 
+}
+
+.action-vol{
+    font-size: 18px;
+    color:#3e9be7;
+    opacity: 0.5;
 }

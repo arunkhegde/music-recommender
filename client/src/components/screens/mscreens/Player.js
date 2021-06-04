@@ -1,13 +1,11 @@
 import {React, useEffect, useState,useRef} from 'react'
 import '../../css/Player.css'
 import image from './images/ukulele.jpg'
-import s1 from './music/hey.mp3'
-import s2 from './music/ukulele.mp3'
-import s3 from './music/summer.mp3'
-export const Player = () => {
-    const [songUrls, setsongUrls] = useState([s1,s2,s3])
-    const [isPlaying, setisPlaying] = useState(false)
-    const [playingsong, setplayingsong] = useState('')
+
+export const Player = ({songUrls,setsongUrls,playingsong,setplayingsong}) => {
+    
+  const [isPlaying, setisPlaying] = useState(false)
+
     const [percentage, setpercentage] = useState(0)
     const [volPercentage, setvolPercentage] = useState(50)
     const [duration,setduration]=useState(0)
@@ -25,13 +23,13 @@ export const Player = () => {
     const nextSong=()=>{
       const skipsong=songUrls.shift()
       setsongUrls(old=>[...old,skipsong])
-      setplayingsong(songUrls[0])  
+      //setplayingsong(songUrls[0])  
     }
 
     const prevSong=()=>{
       const prevsong=songUrls.pop()
       setsongUrls(old=>[prevsong,...old])
-      setplayingsong(songUrls[0]) 
+      //setplayingsong(songUrls[0]) 
     }
 
     //whenver time moves the silder moves
@@ -48,7 +46,8 @@ export const Player = () => {
 
     //on initial render pick first song
     const init=()=>{
-      setplayingsong(songUrls[0])
+      //console.log(1,songUrls[0])
+      //setplayingsong(songUrls[0])
       audioRef.current.volume=0.5     
 
     }
@@ -101,7 +100,7 @@ export const Player = () => {
       
       {/* volume */}
       <div className="volume" id="volume" >
-        <div>
+        <div className="action-vol">
           <i className="fas fa-volume-up"></i>
         </div>
         

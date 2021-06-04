@@ -1,0 +1,24 @@
+.Recommendations{
+    width:50%;
+    padding-top: 5px;
+    padding: auto;
+    display: flex;
+    flex-direction: column;
+    margin:0 1% ;
+    align-items: center;
+    text-align: center;
+}
+.songName{
+    padding:auto;
+    flex-basis: 7%;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.songName:hover{
+    box-shadow: 0 0 10px #1e8ce6,0 0 10px #093050,0 0 10px #051624,0 0 10px #051624 ;
+    ;
+}
