@@ -2,7 +2,7 @@
     flex-basis: 20%;
     border-bottom: blanchedalmond solid;
     margin-top: 20px;
-    display: relative;
+    position: relative;
 }
 
 .search{
@@ -16,6 +16,8 @@
     margin: auto;
     outline: 0;
     border-width: 0 0 2px ;
+    background-color:#133b5c ;
+    color:#85b2d6; 
 }
 
 .search:focus{
@@ -23,9 +25,23 @@
 }
 
 .suggestions{
+    position: absolute;
     width: 80%;
-    height: 200px;
-    display: absolute;
     margin: auto;
-    border: palegoldenrod solid;
+    background-color: #071e31;
+    z-index: 2;
+    left: 10%;
+}
+.sugsongs{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    color: #85b2d6;
+
+}
+.sugsongs:hover{
+    box-shadow: 0 0 10px #1e8ce6,0 0 10px #093050,0 0 10px #051624,0 0 10px #051624 ;
+    cursor: pointer;
 }
