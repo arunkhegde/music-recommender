@@ -11,13 +11,14 @@
 }
 
 .head{
-    background-color:#071e31;
-    color: #1e8ce6;
+    background-color:var(--bgMusicInfo);
+    color: var(--headingColor);
     flex-basis:10%;
     display: flex;
     align-items: center;
     border-bottom: solid #0a2c47 ;
 }
+
 .flogout{
     display: flex;
     align-items: center;
@@ -35,7 +36,7 @@
     height: 100%;
     width: 100%;
     display: flex;
-    background-color:#051929;
+    background-color:var(--bgOfMusicBody);
 
 }
 

@@ -1,3 +1,13 @@
+:root{
+  --bgOfMusicBody:#051929;/*background of of Music player except head(logout,name)*/
+  --headingColor:#1e8ce6; /*heading,actionbtn*/
+  --progressBColor:#3e9be7;/*progress bar,hover action btn*/
+  --progressSContainer:#0e3657;/*progress bar and volume container*/
+  --bgMusicInfo:#071e31;/*music info(one that pops) ,search suggestions bgc ,head bg*/
+  --textColor:#85b2d6;/*search result,recommendation*/
+}
+
+
 .App {
   text-align: center;
   height: 100vh;

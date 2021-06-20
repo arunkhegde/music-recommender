@@ -1,6 +1,8 @@
 import {React, useEffect, useState,useRef} from 'react'
 import '../../css/Player.css'
 import image from './images/ukulele.jpg'
+import i1 from './images/1.jpg'
+import i2 from './images/2.jpg'
 
 export const Player = ({songUrls,setsongUrls,playingsong,setplayingsong}) => {
     
@@ -78,7 +80,7 @@ export const Player = ({songUrls,setsongUrls,playingsong,setplayingsong}) => {
       </audio>
 
       <div className="img-container">
-        <img src={image} alt="music-cover" id="cover" />
+        <img src={i2} alt="music-cover" id="cover" />
       </div>
       
       {/* navigation */}

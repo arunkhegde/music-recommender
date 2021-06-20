@@ -1,0 +1,69 @@
+.mycard{
+    width: 100%;
+    height: 100%;
+    /* margin-top: 5rem; */
+    display: flex;
+
+}
+.auth-card{
+    /* width: 900px; */
+    padding: 3rem;
+    text-align: center;
+    font-family: 'Lemonada', cursive;
+    width: 50%;
+    border: solid black;
+    border-width:0 ;
+    box-shadow: 1px 3px 30px -10px black;
+    margin:auto; 
+    border-radius: 2rem;
+
+}
+.signinup input[type=text] {
+    width: 80%;
+    height:50px ;
+    margin: auto;
+    margin-bottom: 1rem;
+    font-size: larger;
+    text-align: center;
+    display: block;
+    font-family: 'Lemonada', cursive;
+    outline: 0;
+    border-width: 0 0 2px ;
+}
+.signinup input[type=password] {
+    width: 80%;
+    height:50px ;
+    margin: auto;
+    margin-bottom: 1rem;
+    font-size: larger;
+    text-align: center;
+    display: block;
+    font-family: 'Lemonada', cursive;
+    outline: 0;
+    border-width: 0 0 2px ;
+}
+.signinup input[type=text]:focus {
+    
+    box-shadow: 1px 3px 2px -3px green;
+}
+.signinup input[type=password]:focus {
+    
+    box-shadow: 1px 3px 2px -3px green;
+}
+
+.signinup .btn{ 
+    width: 40%;
+    padding: 1%;
+    display:block;
+    margin: auto;
+    font-family: 'Lemonada', cursive;
+    font-size: larger;
+    color: ivory;
+    background-color:rgb(49, 125, 224);
+    border-radius: 1rem;
+    outline: none;
+}
+.signinup .btn:hover{
+    color: ivory;
+    background-color: rgb(49, 100, 233);
+}

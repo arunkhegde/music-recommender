@@ -17,7 +17,7 @@
     outline: 0;
     border-width: 0 0 2px ;
     background-color:#133b5c ;
-    color:#85b2d6; 
+    color:var(--textColor); 
 }
 
 .search:focus{
@@ -28,7 +28,7 @@
     position: absolute;
     width: 80%;
     margin: auto;
-    background-color: #071e31;
+    background-color: var(--bgMusicInfo);
     z-index: 2;
     left: 10%;
 }
@@ -38,7 +38,7 @@
     align-items: center;
     text-align: center;
     justify-content: space-around;
-    color: #85b2d6;
+    color: var(--textColor);
 
 }
 .sugsongs:hover{

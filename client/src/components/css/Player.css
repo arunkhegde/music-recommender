@@ -22,13 +22,13 @@
 }
 .img-container::after{
     content: '';
-    background-color:#fff;
+    background-color:var(--bgOfMusics);
     height:20px;
     width:20px;
     position: absolute;
     left:50%;
     border-radius:50% ;
-    transform:translate(-50%,-50%);  
+    transform:translate(-15%,-45%);  
 }
 .img-container img{
     width: inherit;
@@ -64,8 +64,8 @@
   }
   
   .action-btn {
-    background-color:#051929; 
-    color:#1e8ce6;
+    background-color:var(--bgOfMusicBody); 
+    color:var(--headingColor);
     opacity: 0.5;    
     font-size: 20px;
     cursor: pointer;
@@ -76,7 +76,7 @@
   }
   
   .action-btn.action-btn-big {
-    color:#1e8ce6;
+    color:var(--headingColor);
     opacity: 0.5;
     font-size: 30px;
   }
@@ -92,7 +92,7 @@
   
 .music-info{
     /* background-color: #041c2e; */
-    background-color: #071e31;
+    background-color: var(--bgMusicInfo);
     border-radius: 15px 15px 0 0;
     position:absolute;
     top:0;
@@ -102,7 +102,7 @@
     transform:translateY(0%);
     transition:transform 0.3s ease-in,opacity 0.3s;
     padding: 10px 10px 10px 150px;
-    color: #85b2d6;
+    color: var(--textColor);
 }
 
 .music-info h4{
@@ -114,7 +114,7 @@
 }
 
 .progress-container{
-    background: #0e3657;
+    background: var(--progressSContainer);
     border-radius: 5px;
     cursor:pointer;
     margin: 10px 0;
@@ -124,7 +124,7 @@
 }
 
 .progress{
-    background-color:#3e9be7 ;
+    background-color:var(--progressBColor) ;
     border-radius:5px;
     height:100%;
     width:0%;
@@ -151,7 +151,7 @@
     width: 60px;
     height: 4px;
     position: absolute;
-    background-color: #0e3657;
+    background-color: var(--progressSContainer);
     border-radius: 2px;
     margin-left: 3px;
     bottom: -2px;
@@ -162,7 +162,7 @@
 
 .volume-slider{
     height: inherit;
-    background-color: #3e9be7;
+    background-color: var(--progressBColor);
     position: absolute;
 
     /* background-color: black; */
@@ -171,6 +171,6 @@
 
 .action-vol{
     font-size: 18px;
-    color:#3e9be7;
+    color:var(--progressBColor);
     opacity: 0.5;
 }
