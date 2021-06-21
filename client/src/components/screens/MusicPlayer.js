@@ -9,14 +9,33 @@ import s3 from './mscreens/music/summer.mp3'
 import { SearchBar } from './mscreens/SearchBar'
 
 export const MusicPlayer = () => {
-    const [songUrls, setsongUrls] = useState([s1,s2,s3])
+    const [songUrls, setsongUrls] = useState([s1,s2,s3]);
     const [playingsong, setplayingsong] = useState('') //currently playing song
-    
+
+    const fetchSong=async()=>{
+        try{
+            var songs=await fetch("/users",{
+             method:"get",
+             headers:{
+               "Content-Type":"application/json"
+             }
+           })
+           songs=songs.json()
+           console.log(songs)
+         }
+         catch(err){
+           console.log(err)
+         }
+    }
+    useEffect(()=>{
+        fetchSong();
+    })
+
     const init=()=>{
         setplayingsong(songUrls[0])
     }
     useEffect(init,[songUrls])
-    
+
     return (
         <div className="main">
             <div className="head">
