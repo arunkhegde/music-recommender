@@ -1,10 +1,10 @@
 import {React, useEffect, useState,useRef} from 'react'
 import '../../css/Player.css'
-import image from './images/ukulele.jpg'
-import i1 from './images/1.jpg'
+// import image from './images/ukulele.jpg'
+// import i1 from './images/1.jpg'
 import i2 from './images/2.jpg'
 
-export const Player = ({songUrls,setsongUrls,playingsong,setplayingsong}) => {
+export const Player = ({songUrls,setsongUrls,lurl,playingsong,setplayingsong}) => {
     
   const [isPlaying, setisPlaying] = useState(false)
 
@@ -19,7 +19,7 @@ export const Player = ({songUrls,setsongUrls,playingsong,setplayingsong}) => {
     useEffect(() => {
       const audio=audioRef.current
       isPlaying?audio.play():audio.pause();
-
+      //console.log(playingsong)
     }, [isPlaying,playingsong])
 
     const nextSong=()=>{
@@ -58,25 +58,25 @@ export const Player = ({songUrls,setsongUrls,playingsong,setplayingsong}) => {
 
 
     return (
-    <div className="Pmain">
    
+   <div className="Pmain">
     <div className={`music-container ${isPlaying?'play':''}`} 
     onMouseLeave={()=>{volContainerRef.current.style.display='none'}}
     onMouseEnter={()=>{volContainerRef.current.style.display='block'}}
     >
       <div className="music-info">
-        <h4 id="title">ukelele</h4>
+        <h4 id="title">{songUrls[0]?songUrls[0].name:'----'}</h4>
         <div className="progress-container" id="progress-container" onClick={progressContainerClicked}>
           <div className="progress" id="progress" style={{width:`${percentage}%`}}></div>
         </div>
       </div>
-
-      <audio src={playingsong} id="audio" 
+      <audio  id="audio" key={playingsong} 
       ref={audioRef} onTimeUpdate={getCurrentTime}
       onEnded={nextSong}//on end of current song nextSong
       onLoadedData={(e)=>setduration(e.currentTarget.duration.toFixed(2))} //when song is loaded check duration
       onVolumeChange={(e)=>{setvolPercentage(e.currentTarget.volume*100)}}
       >
+        <source src={`https://docs.google.com/uc?export=download&id=${playingsong}`}/>
       </audio>
 
       <div className="img-container">
@@ -106,19 +106,27 @@ export const Player = ({songUrls,setsongUrls,playingsong,setplayingsong}) => {
           <i className="fas fa-volume-up"></i>
         </div>
         
-        <div className="volume-sider-content">
+      <div className="volume-sider-content">
           <div className="volume-slider-container" ref={volContainerRef} onClick={(e)=>{audioRef.current.volume=e.nativeEvent.offsetX/e.currentTarget.clientWidth}} >
             <div className="volume-slider" style={{width:`${volPercentage}%`}}>
-
+              
             </div>
           </div>
       </div>
 
+    </div>
+
+    </div>
+
+      <div className="AG">
+        
+        <button>Artist</button>
+        <button>Genre</button>
+
       </div>
 
-      
     </div>
-        
-        </div>
+
+
     )
 }

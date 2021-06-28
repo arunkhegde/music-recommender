@@ -70,8 +70,8 @@
     font-size: 20px;
     cursor: pointer;
     border: 0;
-     padding: 10px; 
-     margin: 0 20px; 
+    padding: 10px; 
+    margin: 0 20px; 
     flex-basis: 40%;
   }
   
@@ -173,4 +173,22 @@
     font-size: 18px;
     color:var(--progressBColor);
     opacity: 0.5;
+}
+
+.AG{
+    display: flex;
+    justify-content: space-evenly;
+}
+.AG button{
+    width: 20%;
+    padding: 7px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: var(--bgMusicInfo);
+    background-color: var(--headingColor);
+    border: 0;
+}
+
+.AG button:hover{
+    background-color: var(--progressBColor);
 }

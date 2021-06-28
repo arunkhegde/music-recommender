@@ -3,10 +3,11 @@
     height: 100%;
     /* margin-top: 5rem; */
     display: flex;
-
+    background-color:var(--bgOfMusicBody);
 }
 .auth-card{
     /* width: 900px; */
+    color:var(--headingColor);
     padding: 3rem;
     text-align: center;
     font-family: 'Lemonada', cursive;
@@ -16,6 +17,7 @@
     box-shadow: 1px 3px 30px -10px black;
     margin:auto; 
     border-radius: 2rem;
+    background-color: var(--bgMusicInfo);
 
 }
 .signinup input[type=text] {
@@ -28,7 +30,9 @@
     display: block;
     font-family: 'Lemonada', cursive;
     outline: 0;
+    color: var(--textColor);
     border-width: 0 0 2px ;
+    background-color: var(--bgMusicInfo);
 }
 .signinup input[type=password] {
     width: 80%;
@@ -41,14 +45,15 @@
     font-family: 'Lemonada', cursive;
     outline: 0;
     border-width: 0 0 2px ;
+    background-color: var(--bgMusicInfo);
+    color: var(--textColor);
+    
 }
 .signinup input[type=text]:focus {
-    
-    box-shadow: 1px 3px 2px -3px green;
+    box-shadow: 1px 3px 2px -3px var(--headingColor);
 }
 .signinup input[type=password]:focus {
-    
-    box-shadow: 1px 3px 2px -3px green;
+    box-shadow: 1px 3px 2px -3px var(--headingColor);
 }
 
 .signinup .btn{ 
@@ -59,9 +64,11 @@
     font-family: 'Lemonada', cursive;
     font-size: larger;
     color: ivory;
-    background-color:rgb(49, 125, 224);
+    background-color:#3e9be7;
     border-radius: 1rem;
     outline: none;
+    cursor: pointer;
+
 }
 .signinup .btn:hover{
     color: ivory;
