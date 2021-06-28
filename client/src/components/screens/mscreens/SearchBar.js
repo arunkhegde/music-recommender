@@ -7,7 +7,7 @@ export const SearchBar = () => {
             <input type={Text} className="search"/>
             <div className="suggestions" >
                 {sugSongs.map((x)=>{
-                    return <div class="sugsongs">{x}</div>
+                    return <div className="sugsongs" id={x}>{x}</div>
                 })}
             </div>
         </div>

@@ -1,43 +1,26 @@
 const express =require('express')
-
+const app =express()
 const mongoose = require('mongoose')
 require('dotenv').config({path:'./config/config.env'})
+const authenticate=require('./authenticate')
+const Song=require('./models/Song');
 
 
 const connectDB = require('./config/db')
 connectDB()
-const Song=require('./models/Song');
-
-// const SongSchema=new mongoose.Schema({
-//     googleid:{
-//         type:String,
-//         required:true
-//     },
-//     name:{
-//         type:String,
-//         required:true
-//     }
-// })
-
-//mongoose.model("test",SongSchema)
-
-//const test=mongoose.model('test')
-const app =express()
-
-
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
 //app.use('/auth')
 
-app.get('/users',async(req,res)=>{
+app.get('/songs',authenticate,async(req,res)=>{
     try{
         console.log("ok")
-        const posted={
-            googleid:"129",
-            name:"name"
-        }
+        // const posted={
+        //     googleid:"129",
+        //     name:"name"
+        // }
         const result=await Song.find()
         console.log(result)
         res.json({result})
@@ -47,9 +30,11 @@ app.get('/users',async(req,res)=>{
     }
 })
 
-app.get('/songs',(req,res)=>{
-
+app.get('/ok',authenticate,async(err,res)=>{
+    res.json({message:"done"})
 })
+
+app.use('/',require('./routes/auth'))
 
 const PORT=process.env.PORT || 5000
 

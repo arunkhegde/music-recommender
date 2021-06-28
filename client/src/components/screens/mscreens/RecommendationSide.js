@@ -11,9 +11,9 @@ export const RecommendationSide = ({songUrls,setsongUrls}) => {
         setsongUrls(newList)
     }
     return (
-            <div class="Recommendations" style={{color:'white'}}>
+            <div className="Recommendations" style={{color:'white'}}>
                 {songUrls.map(song=>{
-                    return <div class="songName" id={song.name} onClick={()=>{popSong(song)}}>{song.name}</div>
+                    return <div className="songName" id={song.name} onClick={()=>{popSong(song)}}>{song.name}</div>
                 })}
             </div>
     )
