@@ -13,7 +13,7 @@ export const RecommendationSide = ({songUrls,setsongUrls}) => {
     return (
             <div className="Recommendations" style={{color:'white'}}>
                 {songUrls.map(song=>{
-                    return <div className="songName" id={song.name} onClick={()=>{popSong(song)}}>{song.name}</div>
+                    return <div className="songName" key={song.name} onClick={()=>{popSong(song)}}>{song.songname}</div>
                 })}
             </div>
     )

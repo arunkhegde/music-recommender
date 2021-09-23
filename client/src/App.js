@@ -11,8 +11,10 @@ const Routing=()=>{
   useEffect(() => {
     const lol=()=>{
     try{
+      //If not signed in send to signin page
       if(!localStorage.getItem('user') ||!localStorage.getItem('jwt')){
         history.push('/signin')
+
       }
     }
     catch(err){

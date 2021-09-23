@@ -18,7 +18,7 @@ export const MusicPlayer = () => {
     useEffect(()=>{
         const fetchSong=async()=>{
             try{
-                console.log("lolu")
+                //console.log("lolu")
                 const token=localStorage.getItem('jwt')
                 var songs=await fetch("/songs",{
                  method:"get",
@@ -37,6 +37,7 @@ export const MusicPlayer = () => {
                 //console.log("hmm",jsongs)
                 setlurl(jsongs)
                 setsongUrls(jsongs)
+                console.log(jsongs)
                 //console.log("lolu")
     
              }
@@ -62,18 +63,21 @@ export const MusicPlayer = () => {
                 <div className="fname" style={{flexBasis:"20%"}}>
                     <h3>{localStorage.getItem('user')?JSON.parse(localStorage.getItem('user')).name:""}</h3>
                 </div>
+
                 <div className="fmusicplayer" style={{flexBasis:"60%"}}>
                     <h1>Music Recommender</h1>
                 </div>
+
                 <div className="flogout" style={{flexBasis:"20%",padding:'0',margin:'0'}} 
                 onClick={()=>{history.push('/signin');localStorage.clear()}}>
                     <h3>Logout</h3>
                 </div>
+            
             </div>
 
             <div className="body">
                 <div className="PSmain"> {/*Left Side */}
-                        <SearchBar/>
+                        <SearchBar setsongUrls={setsongUrls}/>
                 <Player songUrls={songUrls} setsongUrls={setsongUrls} lurl={lurl} playingsong={playingsong} setplayingsong={setplayingsong}/>
 
                 </div> 

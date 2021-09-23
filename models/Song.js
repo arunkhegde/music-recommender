@@ -6,7 +6,12 @@ const SongSchema=new mongoose.Schema({
     },
     name:{
         type:String,
-    }
+    },
+    songname:{
+        type:String,
+    },
+    recommendations:String,
+    tags:String
 })
 
 module.exports=Song=mongoose.model("Song",SongSchema)

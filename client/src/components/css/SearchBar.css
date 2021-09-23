@@ -1,6 +1,6 @@
 .Smain{
     flex-basis: 20%;
-    border-bottom: blanchedalmond solid;
+    /* border-bottom: blanchedalmond solid; */
     margin-top: 20px;
     position: relative;
 }

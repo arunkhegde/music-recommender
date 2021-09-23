@@ -59,7 +59,7 @@ export const Signin = () => {
     return (
         <div className="mycard">
             <div className="auth-card">
-                <h2>Login</h2>
+                <h2>Signin</h2>
                 <form className="signinup form" onSubmit={(e)=>PostData(e)}>
                     <input type="text" placeholder="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
                     <input type="password" placeholder="password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>

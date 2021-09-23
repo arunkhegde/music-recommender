@@ -51,7 +51,7 @@ export const Player = ({songUrls,setsongUrls,lurl,playingsong,setplayingsong}) =
       //console.log(1,songUrls[0])
       //setplayingsong(songUrls[0])
       audioRef.current.volume=0.5     
-
+      //console.log("initttt")
     }
     useEffect(init,[])
 
@@ -65,7 +65,7 @@ export const Player = ({songUrls,setsongUrls,lurl,playingsong,setplayingsong}) =
     onMouseEnter={()=>{volContainerRef.current.style.display='block'}}
     >
       <div className="music-info">
-        <h4 id="title">{songUrls[0]?songUrls[0].name:'----'}</h4>
+        <h4 id="title">{songUrls[0]?songUrls[0].songname:'----'}</h4>
         <div className="progress-container" id="progress-container" onClick={progressContainerClicked}>
           <div className="progress" id="progress" style={{width:`${percentage}%`}}></div>
         </div>
@@ -102,19 +102,19 @@ export const Player = ({songUrls,setsongUrls,lurl,playingsong,setplayingsong}) =
       
       {/* volume */}
       <div className="volume" id="volume" >
-        <div className="action-vol">
-          <i className="fas fa-volume-up"></i>
-        </div>
-        
-      <div className="volume-sider-content">
-          <div className="volume-slider-container" ref={volContainerRef} onClick={(e)=>{audioRef.current.volume=e.nativeEvent.offsetX/e.currentTarget.clientWidth}} >
-            <div className="volume-slider" style={{width:`${volPercentage}%`}}>
-              
-            </div>
+          <div className="action-vol">
+            <i className="fas fa-volume-up"></i>
           </div>
-      </div>
+          
+        <div className="volume-sider-content">
+            <div className="volume-slider-container" ref={volContainerRef} onClick={(e)=>{audioRef.current.volume=e.nativeEvent.offsetX/e.currentTarget.clientWidth}} >
+              <div className="volume-slider" style={{width:`${volPercentage}%`}}>
+                
+              </div>
+            </div>
+        </div>
 
-    </div>
+      </div>
 
     </div>
 

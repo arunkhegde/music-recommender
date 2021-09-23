@@ -1,7 +1,7 @@
 .Pmain{
     flex-basis: 30%;
     padding: 0 10px;
-    border: azure solid;
+    /* border: azure solid; */
 }
 
 .music-container{
@@ -124,7 +124,7 @@
 }
 
 .progress{
-    background-color:var(--progressBColor) ;
+    background-color:var(--progressBColor);
     border-radius:5px;
     height:100%;
     width:0%;
