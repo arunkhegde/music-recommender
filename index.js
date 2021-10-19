@@ -56,19 +56,21 @@ app.get('/songs/bringsearchsongsbytags/',authenticate,async(req,res)=>{
     try{
         console.log("tagsearch")
         const result=await Song.find()
-       // console.log("print",req.query.search_string)
-        const return_array=[]
-        //console.log(result[0].tags)
-        console.log(result)
+        //console.log("search_string",req.query.search_string)
+         const return_array=[]
+    //     //console.log(result[0].tags)
+        // console.log(req.query)
+        //console.log("lol",req.query.search_string)
         for(let i=0;i<result.length;i++){
             //all_tags has array of tags
             var all_tags=await result[i].tags.substr(1,result[i].tags.length-2).split(',')
             for(let j=0;j<all_tags.length;j++){
-
-                if(all_tags[j].substr(1,all_tags[j].length-2).substr(0,req.query.search_string.length)===req.query.search_string){
+                var tag_name=all_tags[j].substr(1,all_tags[j].length-2)
+                //console.log(tag_name)
+                if(tag_name.substr(0,req.query.search_string.length)===req.query.search_string){
                     return_array.push(result[i])
-                    console.log(all_tags[j].length)
-                    console.log(all_tags[j].substr(1,all_tags[j].length-2).substr(0,req.query.search_string.length)," ",req.query.search_string)
+                    //console.log(all_tags[j].length)
+                   // console.log(all_tags[j].substr(1,all_tags[j].length-2).substr(0,req.query.search_string.length)," ",req.query.search_string)
                     break;
                 }
             }

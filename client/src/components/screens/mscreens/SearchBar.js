@@ -4,30 +4,32 @@ export const SearchBar = ({setsongUrls}) => {
     const [sugSongs, setsugSongs] = useState([])
     const [search_string,setsearch_string]=useState("");
 
-    const load_recommendations=async(name)=>{
+    const load_recommendations=async(song)=>{
         try {
 
             const token=localStorage.getItem('jwt')
             console.log("hey")
-            const result=await fetch(`/songs/load_recommendations/?search_string=${name}`,{
+            const result=await fetch(`/songs/load_recommendations/?search_string=${song.name}`,{
                 method:"get",
                 headers:{
                 "Authorization":`Bearer ${token}`,
                 "Content-Type":"application/json",
 
                 }
-            })
+            }) //bring recommendation for songs
             const res=await result.json()
-
-            console.log(res.rec_obj)
             
-            setsongUrls(res.rec_obj)
-            //setsongUrls()
+            //console.log(res.rec_obj)
+            
+            const allrec=res.rec_obj
+            allrec.unshift(song)  // cur selected song at first
+            setsongUrls(allrec)
 
         } catch (error) {
             console.log(error)
         }
     }
+    
     const bring_searchsongs=async(e)=>{
         if(e.key==='Enter'){
             //console.log("lol1")
@@ -37,13 +39,15 @@ export const SearchBar = ({setsongUrls}) => {
                 const token=localStorage.getItem('jwt')
                 //////////////////////////////////////////////////////////////////////////usestate not working
                 let srch_st=e.target.value
-                console.log("search",search_string)
+
+                console.log("search",search_string,)
                 //?search_string=${search_string}
                 console.log(e.target.value)
                 if(e.target.value==="")return;
                 if(e.target.value[0]==="#"){
-                    console.log("#########")
-                    var songs=await fetch(`/songs/bringsearchsongsbytags/?search_string=${srch_st.substr(1,search_string.length-1)}`,{
+
+                    console.log("#########",)
+                    var songs=await fetch(`/songs/bringsearchsongsbytags/?search_string=${srch_st.substr(1,srch_st.length-1)}`,{
                         method:"get",
                         headers:{
                         "Authorization":`Bearer ${token}`,
@@ -83,7 +87,7 @@ export const SearchBar = ({setsongUrls}) => {
             <input type='text' className="search" onchange={e=>setsearch_string(e.target.value)} onKeyDown={bring_searchsongs}/>
             <div className="suggestions" >
                 {sugSongs?sugSongs.map((x)=>{
-                    return <div className="sugsongs" key={x.name} id={x.name} onClick={()=>load_recommendations(x.name)}>{x.songname}</div>
+                    return <div className="sugsongs" key={x.name} id={x.name} onClick={()=>load_recommendations(x)}>{x.songname}</div>
                 }):''}
             </div>
         </div>

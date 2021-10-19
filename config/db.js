@@ -17,4 +17,5 @@ const connectDB = async ()=>{
     //console.log(process.env.MONGO_URI,process.env.LOL)
 }
 
+
 module.exports=connectDB
