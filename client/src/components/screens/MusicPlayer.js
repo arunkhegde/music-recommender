@@ -54,6 +54,7 @@ export const MusicPlayer = () => {
             setplayingsong(songUrls[0].googleid)
             //console.log(playingsong)
         }
+        console.log(songUrls)
     }
     useEffect(init,[songUrls])
 
@@ -77,7 +78,7 @@ export const MusicPlayer = () => {
 
             <div className="body">
                 <div className="PSmain"> {/*Left Side */}
-                        <SearchBar setsongUrls={setsongUrls}/>
+                        <SearchBar setsongUrls={setsongUrls} songUrls={songUrls}/>
                 <Player songUrls={songUrls} setsongUrls={setsongUrls} lurl={lurl} playingsong={playingsong} setplayingsong={setplayingsong}/>
 
                 </div> 

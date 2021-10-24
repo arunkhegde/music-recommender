@@ -1,12 +1,14 @@
+import { set } from 'mongoose';
 import React, { useState } from 'react'
 import '../../css/SearchBar.css'
-export const SearchBar = ({setsongUrls}) => {
+export const SearchBar = ({setsongUrls,songUrls}) => {
     const [sugSongs, setsugSongs] = useState([])
     const [search_string,setsearch_string]=useState("");
 
     const load_recommendations=async(song)=>{
-        try {
 
+        try {
+            setsugSongs([])
             const token=localStorage.getItem('jwt')
             console.log("hey")
             const result=await fetch(`/songs/load_recommendations/?search_string=${song.name}`,{
@@ -23,7 +25,10 @@ export const SearchBar = ({setsongUrls}) => {
             
             const allrec=res.rec_obj
             allrec.unshift(song)  // cur selected song at first
-            setsongUrls(allrec)
+            // console.log("recs")
+            // console.log("song",song)
+            // console.log(allrec)
+            await setsongUrls(allrec)
 
         } catch (error) {
             console.log(error)
@@ -70,6 +75,7 @@ export const SearchBar = ({setsongUrls}) => {
                 //console.log(songs)
             
                 songs=await songs.json()
+                console.log("insearchbar")
                 console.log(songs)
                 songs=await songs.return_array
                 setsugSongs(songs)
@@ -84,7 +90,7 @@ export const SearchBar = ({setsongUrls}) => {
     }
     return (
         <div className="Smain">
-            <input type='text' className="search" onchange={e=>setsearch_string(e.target.value)} onKeyDown={bring_searchsongs}/>
+            <input type='text' className="search" placeholder="start with '#' for tags and prefix search for song name" onchange={e=>setsearch_string(e.target.value)} onKeyDown={bring_searchsongs}/>
             <div className="suggestions" >
                 {sugSongs?sugSongs.map((x)=>{
                     return <div className="sugsongs" key={x.name} id={x.name} onClick={()=>load_recommendations(x)}>{x.songname}</div>

@@ -55,6 +55,34 @@ export const Player = ({songUrls,setsongUrls,lurl,playingsong,setplayingsong}) =
     }
     useEffect(init,[])
 
+    const load_recommendations=async(song)=>{
+      try {
+console.log("rec wait")
+          const token=localStorage.getItem('jwt')
+          console.log("hey")
+          const result=await fetch(`/songs/load_recommendations/?search_string=${song.name}`,{
+              method:"get",
+              headers:{
+              "Authorization":`Bearer ${token}`,
+              "Content-Type":"application/json",
+
+              }
+          }) //bring recommendation for songs
+          const res=await result.json()
+          
+          //console.log(res.rec_obj)
+          
+          const allrec=res.rec_obj
+          allrec.unshift(song)  // cur selected song at first
+          // console.log("recs")
+          // console.log("song",song)
+          // console.log(allrec)
+          await setsongUrls(allrec)
+
+      } catch (error) {
+          console.log(error)
+      }
+  }
 
 
     return (
@@ -65,7 +93,7 @@ export const Player = ({songUrls,setsongUrls,lurl,playingsong,setplayingsong}) =
     onMouseEnter={()=>{volContainerRef.current.style.display='block'}}
     >
       <div className="music-info">
-        <h4 id="title">{songUrls[0]?songUrls[0].songname:'----'}</h4>
+        <h4 id="title">"{songUrls[0]?songUrls[0].songname:'----'}" by arun </h4>
         <div className="progress-container" id="progress-container" onClick={progressContainerClicked}>
           <div className="progress" id="progress" style={{width:`${percentage}%`}}></div>
         </div>
@@ -119,9 +147,11 @@ export const Player = ({songUrls,setsongUrls,lurl,playingsong,setplayingsong}) =
     </div>
 
       <div className="AG">
-        
-        <button>Artist</button>
-        <button>Genre</button>
+        {/* <button>Artist</button>
+        <h4 id="genre">genre:xyz</h4> */}
+        <button onClick={()=>load_recommendations(songUrls[0])}>Recommend</button> 
+        {/* <h4 id="artist">artist:abc</h4>
+        <button>Genre</button> */}
 
       </div>
 

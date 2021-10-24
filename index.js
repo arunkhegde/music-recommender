@@ -39,7 +39,7 @@ app.get('/songs/bringsearchsongsbyname/',authenticate,async(req,res)=>{
         const return_array=[]
         //if(req.query.search_string==="")return res.json({})
         for(let i=0;i<result.length;i++){
-            if(result[i].songname.substr(0,req.query.search_string.length)===req.query.search_string){
+            if(result[i].songname.substr(0,req.query.search_string.length).toLowerCase()===req.query.search_string.toLowerCase()){
                 return_array.push(result[i])
             }
         }
@@ -63,11 +63,11 @@ app.get('/songs/bringsearchsongsbytags/',authenticate,async(req,res)=>{
         //console.log("lol",req.query.search_string)
         for(let i=0;i<result.length;i++){
             //all_tags has array of tags
-            var all_tags=await result[i].tags.substr(1,result[i].tags.length-2).split(',')
+            var all_tags=await result[i].tags.substr(1,result[i].tags.length-2).split(', ')
             for(let j=0;j<all_tags.length;j++){
                 var tag_name=all_tags[j].substr(1,all_tags[j].length-2)
                 //console.log(tag_name)
-                if(tag_name.substr(0,req.query.search_string.length)===req.query.search_string){
+                if(tag_name.substr(0,req.query.search_string.length).toLowerCase()===req.query.search_string.toLowerCase()){
                     return_array.push(result[i])
                     //console.log(all_tags[j].length)
                    // console.log(all_tags[j].substr(1,all_tags[j].length-2).substr(0,req.query.search_string.length)," ",req.query.search_string)

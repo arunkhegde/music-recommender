@@ -57,7 +57,15 @@ export const Signin = () => {
     }
 
     return (
+        <div style={{height:'89.5vh'}}>
+        <div className="head">
+            <div className="fmusicplayer" style={{flexBasis:"100%"}}>
+                <h1>Music Recommender</h1>
+            </div>
+    
+        </div>
         <div className="mycard">
+
             <div className="auth-card">
                 <h2>Signin</h2>
                 <form className="signinup form" onSubmit={(e)=>PostData(e)}>
@@ -70,6 +78,7 @@ export const Signin = () => {
                     <h3 style={{color:toastColor}}>{toast}</h3>
                 </form>
             </div>
+        </div>
         </div>
     )
 }
