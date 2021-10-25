@@ -14,6 +14,14 @@ app.use(express.urlencoded({extended:false}))
 
 //app.use('/auth')
 
+if(process.env.NODE_ENV=="production"){
+    app.use(express.static('client/build'))
+ /*   app.get("/",(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+    })*/
+    console.log("lol")
+}
+
 app.get('/songs',authenticate,async(req,res)=>{
     try{
        // console.log("ok")
