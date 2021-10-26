@@ -93,7 +93,7 @@ console.log("rec wait")
     onMouseEnter={()=>{volContainerRef.current.style.display='block'}}
     >
       <div className="music-info">
-        <h4 id="title">"{songUrls[0]?songUrls[0].songname:'----'}" by arun </h4>
+        <h4 id="title">"{songUrls[0]?songUrls[0].songname:'----'}" by {songUrls[0]?songUrls[0].artist:'arun'} </h4>
         <div className="progress-container" id="progress-container" onClick={progressContainerClicked}>
           <div className="progress" id="progress" style={{width:`${percentage}%`}}></div>
         </div>

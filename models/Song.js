@@ -11,7 +11,9 @@ const SongSchema=new mongoose.Schema({
         type:String,
     },
     recommendations:String,
-    tags:String
+    tags:String,
+    artist:String
+
 })
 
 module.exports=Song=mongoose.model("Song",SongSchema)
