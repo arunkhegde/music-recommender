@@ -29,7 +29,7 @@ app.get('/songs',authenticate,async(req,res)=>{
         //     googleid:"129",
         //     name:"name"
         // }
-        const result=await Song.find()
+        const result=await Song.find().limit(5)
         
         //const matching_songs
 
